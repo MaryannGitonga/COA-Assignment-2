@@ -3,9 +3,16 @@
 #include <algorithm>
 #include <bitset>
 #include<iomanip>
+
 using namespace std;
 
-void convert_to_binary(double num){
+double fRand(double fMin, double fMax)
+{
+    double f = (double)rand() / RAND_MAX;
+    return fMin + f * (fMax - fMin);
+}
+
+double convert_to_binary(double num){
     string binary_num = "";
     string remark = "";
     int decimal_counter = 0;
@@ -49,13 +56,29 @@ void convert_to_binary(double num){
         decimal_counter++;
     }
 
-    cout << num << "\t";
-    cout << binary_num << "\t";
+    cout <<"\t" <<num << "\t\t\t";
+    cout << binary_num << "\t\t\t";
     cout << remark << "\n\n";    
     
 }
 
 int main(){    
-    // convert_to_binary(11.81);
+    double numbers[30];
+      for (int i=0; i < 30; i++) 
+      {
+        double n= fRand(1,200);
+        numbers[i] = n;
+        //cout <<numbers[i]<<"\n";
+      }
+    cout<< "Index\t"<<"Decimal Number\t\t" <<"Binary Number\t\t\t" <<"Remark";
+    //looping all the numbers
+    double n;
+    for(int k=0; k < 30; k++) 
+    { 
+        cout<<"\n";
+        n= numbers[k];
+        cout<<k+1<<". ";
+        double num=convert_to_binary(n);  
+    }
     return 0;
 }
