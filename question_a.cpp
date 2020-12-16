@@ -53,24 +53,16 @@ string hex(int num){
 
 int main()
 {
-	int n,temp,i=1,j,r;
-	char hex[50];
-	temp=n;
-	while(temp!=0)
-	{
-		r =temp %16;
-		if(r<10)
-		hex[i++]=r +48;
-		else
-		hex[i++]=r +55;
-		temp=temp/16;
-		for(j=i;j>0;j--)
-		cout<<hex[j];
-		return 0;
-		
-	}
-	cout<<"Decimal(base 10)\t Binary(base 2)\t \t \t Hexadecimal(base 16)";
-	cin>>n;
-	cout<<"\t \t \t "<<dec(n)<<"\t \t \t"<<"\t \t \t"<<hex[j]<<endl;
+	
+    for (int i = 0; i <= 256; i++)
+    {
+        cout << "Decimal: " << i << "\t";
+        cout << "Binary: " << dec(i) << "\t";
+        cout << "Hexadecimal: " << ((i == 0)? "0" : hex(i)) << "\n\n";
+    }
+    
+
+
+
 }
 
